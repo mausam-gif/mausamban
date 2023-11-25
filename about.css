@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+
+/* this make the entire card left right up down using padding and 40px means padding from up to down*/
+.slide-container{
+  z-index: 1;
+    max-width: 1120px;
+    width: 100%;
+    padding: 40px 0;
+   
+}
+/*------------------------------------------------------------------*/
+.slide-content{
+    overflow: hidden;
+    margin: 0 40px;
+    border-radius: 25px;
+}
+.card{
+    box-shadow: 8px 13px 20px skyblue;
+     
+    border-radius: 25px;
+    background-color: #fff;
+}
+.card:hover{
+    box-shadow: 8px 13px 20px #333;
+}
+.image-content,
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:10px 14px;
+}
+.image-content{
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+    
+.overlay{
+    position:absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4070f4;
+    border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #4070f4;
+}
+.overlay::after{
+    border-radius: 0 25px 0 0;
+    background-color: white;
+}
+
+/*no need to touch just for image and border*/
+.card-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 3px;
+}
+
+.card-image .card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #4070f4;
+}
+/*--------------------------------------------------------------*/
+.name{
+    font-size: 18px;
+    font-weight: 500;
+    color:#333
+}
+.description{
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+}
+.button{
+    border:none;
+    font-size: 16px;
+    color: #fff;
+    padding: 8px 16px;
+    background-color: #4070f4;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.button:hover{
+    background-color: #265df2;
+
+}
+
+/*--------------------------------------------------------------*/
+.swiper-navBtn {
+    color: #6e93f7;
+    transition: color 0.3s ease;
+}
+.swiper-navBtn:hover {
+    color: #4070f4;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+    font-size: 40px;
+}
+.swiper-button-next{
+    right: 0;
+
+}
+
+.swiper-button-prev{
+    left: 0;
+}
+.swiper-pagination-bullet {
+    background-color: #6e93f7;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    background-color: #4070f4;
+}
+.wrapper,.single-card
+{
+    height: 380px;
+    max-width: 300px;
+    margin-left: 1.5%;
+   
+    margin-top: 5%;
+    z-index: 1;
+    
+}
+.wrapper{
+    perspective: 900px;
+}
+
+.single-card{
+    text-align: center;
+    transition: all 1.5s cubic-bezier(0.7, -.5, 0.3, 1.8);
+    transform-style: preserve-3d;
+
+}
+
+.wrapper:hover .single-card{
+    transform: rotateY(180deg);
+ 
+}
+
+.front, 
+.back{
+width: 300px;
+position: relative;
+top: 0;
+left: 0;
+backface-visibility: hidden;
+
+box-shadow: -1px 5px 20px #12f7ff inset;
+
+
+}
+.front{
+    cursor: pointer;
+    height: 100%;
+    
+    backface-visibility: hidden;
+
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center center;
+   
+  
+   
+}
+.front img{
+    height: 150%;
+    width: 180%;
+    margin-left: -65%;
+    margin-top: -50%;
+}
+
+.back{
+    transform: rotateY(180deg);
+    position: absolute;
+    border-radius: 50px;
+    height: 360px;
+    background:rgba(0, 0, 0, 0);
+
+    color: var(--hover-color);
+
+}
+
+.content{
+    padding: 10px 20px;
+
+}
+
+.content p{
+   text-align: justify;
+ font-size: 20px;
+ padding: 5px;
+    padding-top: 10px;
+    text-decoration: underline;
+    display: inline-flex;
+}
+.content h1{
+    font-size: 35px;
+    margin: 0;
+    font-weight: 900;
+    text-decoration: dotted underline;
+    text-align: justify;
+}
+.content h2{
+    padding-top: 20px;
+}
+.content h3{
+    margin-top: -10px;
+    margin-left: 30px;
+    text-decoration: dotted underline;
+    text-align: justify;
+}
+
+.socials i{
+    font-size: 30px;
+    margin: 0 0px;
+    color:#12f7ff
+}
+
+.socials i:hover{
+    color: var(--font-neon-text-shadow);
+}
+
+@media screen and (max-width:768px) {
+    .slide-content{
+        margin: 0 10px;
+    }
+    .swiper-navBtn{
+        display: none;
+    }
+}

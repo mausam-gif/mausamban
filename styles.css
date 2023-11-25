@@ -28,31 +28,68 @@
     0 0 100px rgba(18,247,255,0.6),
     0 0 150px rgba(18,247,255,0.6);
 }
+::-webkit-scrollbar{
+    height: -8;
+    width: .9rem;
+
+}
+::-webkit-scrollbar-track{
+    background: var(--sec-bg-color);
+
+}
+
+::-webkit-scrollbar-thumb{
+    background: var(--hover-color);
+    border-radius: 5rem;
+
+}
+
+
+
+
+
+
 body{
     font-family:'Ubuntu', sans-serif;
-   background-color: var(--bg-color);
+  background-color: #250821;
     color:var(--text-color);
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #efefef;
+    padding: 3px;
 }
 video{
-    position: absolute;
+    position: fixed;
     object-fit: cover;
-    height: 100%;
+    
+    height: 114%;
     width: 100%;
     z-index: -1;
 }
 
 
 header
-{
+{   
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     padding: 10px 30px;
-    position: relative;
+
     
 
     
+}
+header.sticky{
+    background: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) ;
+    padding: 12px 10%;
 }
 header .logo
 {
@@ -79,23 +116,28 @@ header .logo p a
     color: crimson;
 }
 
-.nav
+.navlist
 {
     display: flex;
     
 }
 
-.nav a{
+.navlist a{
     padding: 10px 20px;
     color: var(--text-color);
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     font-size: larger;
+    animation: slideAnimation 1s ease forwards;
     
 }
-.nav a:hover{
+.navlist a:hover{
     color: var(--hover-color);
     text-shadow: var(--font-neon-text-shadow);
+}
+
+.navlist a.active{
+    color: var(--hover-color);
 }
 #menu-icon
 {
@@ -133,6 +175,7 @@ section{
 .home-content
 {
     max-width: 600px;
+    margin-top:-10%;
 
 }
 .home-content h1{
@@ -161,7 +204,9 @@ section{
     align-items: center;
     width: 300px;
     margin: 1rem 0 2rem;
+    grid-gap: 20px;
 }
+
 .info-box h5
 {
     font-weight: 600;
@@ -238,7 +283,7 @@ a.btn:nth-child(2)::before{
 
 .social-media
 {
-    margin-top: 8rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: space-between;
     width: 130px;
@@ -289,6 +334,7 @@ a.btn:nth-child(2)::before{
 
 .home-image{
     position: relative;
+    top: -5%;
 
 }
 
@@ -297,7 +343,7 @@ a.btn:nth-child(2)::before{
 }
 
 .img-box img{
-    width: 100%;
+    width: 80%;
     max-width: 350px;
     height: auto;
     
@@ -305,23 +351,24 @@ a.btn:nth-child(2)::before{
 
 .liquid{
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 15%;
+    width: 80%;
+    height: 80%;
+    top: 20%;
+    margin-left: 10%;
     z-index: -1;
 }
 
 .liquid:nth-child(2){
-    filter: blur(200px );
+    filter: blur(100px );
 }
 
 
-
+/*loading-screen*/
   
   .loading-screen {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
+    position: fixed;
+    z-index: 10000000000000;
+    width: 100vw;
     height: 100vh;
     background-color: black;
     color: white;
@@ -331,8 +378,8 @@ a.btn:nth-child(2)::before{
   .loading-section {
     position: absolute;
     display: flex;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: 100VH;
     align-items: center;
     justify-content: center;
   }
@@ -359,7 +406,7 @@ a.btn:nth-child(2)::before{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     height: min-content;
   }
   .loading-images {
@@ -397,6 +444,8 @@ a.btn:nth-child(2)::before{
     font-weight: lighter;
     font-size: 12px;
   }
+
+  /*audio*/
   
 .between
 {
@@ -443,5 +492,352 @@ a.btn:nth-child(2)::before{
     /* Change the icon color to green when audio is on */
    
 }
+/*--------------------------------------ABOUT TAB-------------------------------------*/
 
-  
+#about{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*---------------------------------------other css in another sheet-------------------*/
+
+/* ================================journey section=============================*/
+.journey{
+    background:rgba(0, 0, 0, 0.1);
+}
+.main-text{
+    text-align: center;
+    padding-bottom: 50px;
+    margin-top: -0.1%;
+}
+.main-text h2{
+    font-size: var(--big-font);
+    color:var(--hover-color);
+}
+
+.main-text h5{
+    font-weight: lighter;
+}
+
+.skill-main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-row-gap:30px;
+    grid-column-gap: 100px;
+}
+
+.skill-bar{
+    margin-bottom: 2.3rem;
+}
+
+.skill-main h3{
+    margin-bottom: 2rem;
+    font-size: var(--norma-font);
+    text-align: center;
+
+}
+
+.skill-left .skill-bar .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+}
+.skill-left .skill-bar .bar{
+    width: 100%;
+    height: 10px;
+    background-color: black;
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+
+}
+.skill-bar .bar span{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background: var(--hover-color);
+    border-radius: 25px;
+    box-shadow: var(--neon-box-shadow);
+}
+.skill-bar .bar .htm{
+    width: 95%;
+    animation: htm 7s infinite;
+    
+}
+
+.skill-bar .bar .css{
+    width: 55%;
+    animation: css 8s infinite;
+}
+
+.skill-bar .bar .javascript{
+    width: 30%;
+    animation: javascript 9s infinite;
+}
+
+.skill-bar .bar .editing{
+    width: 62%;
+    animation: editing 10s infinite;
+}
+
+@keyframes htm{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 95%;
+    }
+}
+
+@keyframes css{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 55%;
+    }
+}
+
+@keyframes javascript{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 30%;
+    }
+}
+
+@keyframes editing{
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 62%;
+    }
+}
+
+/*right-skills*/
+.professional{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.box{
+    position: relative;
+    margin: 10px 0;
+    flex: 1 1 15rem;
+}
+
+.box .text{
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.box .text big{
+    font: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.box .text small{
+    display: block;
+    font-weight: 600;
+}
+.circle{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle .points{
+    width: 2px;
+    height: 10px;
+    background-color:red;
+    position: absolute;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i)*var(--rot))) translateY(-45px);
+
+}
+
+.points.marked{
+    animation: glow 0.04s linear forwards ;
+    animation-delay: calc(var(--i)*0.1s);
+}
+
+@keyframes glow{
+    0%{
+        background:  var(--bg-color);
+        box-shadow: none;
+    }
+    100%{
+       background: var(--hover-color);
+       box-shadow: var(--neon-box-shadow);
+    }
+}
+
+@keyframes slideAnimation {
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*footer*/
+footer{
+    padding: 1.5rem 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer  p{
+    color: #bdbdbd;
+}
+
+footer a{
+    color: var(--text-color);
+    display: inline-flex;
+    justify-content: center;
+    background: var(--hover-color);
+    padding: .6rem;
+    border-radius: 5px;
+}
+
+footer a i{
+    font-size: 1rem;
+    color: var(--sec-bg-color);
+}
+/*parallex*/
+.scroll-scale{
+    opacity: 0;
+    transform: scale(.9);
+    transition: all 4s;
+}
+.scroll-bottom{
+    opacity: 0;
+    transform: translateY(300px);
+    transition:3s;
+}
+.scroll-top{
+    opacity: 0;
+    transform: translateY(-300px);
+    transition:3s;
+}
+.show-items{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* responsive styles*/
+@media(max-width:991px){
+
+    header,
+    header.sticky{
+        padding: 15px 5%;
+    }
+    footer{
+        padding: 15px 5%;
+    }
+
+    section{
+        padding: 50px 5%;
+    }
+
+    .navlist a{
+        padding:8px 15px;
+    }
+    :root{
+        --big-font:2.2rem;
+        --norma-font:1.8rem;
+        --neon-box-shadow:0 0 .8rem #12f7ff;
+        --h2-font:3rem;
+    }
+    .home-content{
+        margin-top: 5rem;
+    }
+    .social-icons{
+        margin-top: 2rem;
+    }
+
+}
+
+@media(max-width:768px){
+    #menu-icon{
+        display:block;
+        transition: all .4s ease;
+    }
+    #menu-icon.bx-x{
+        transform: rotate(-180deg);
+    }
+    .navlist{
+        display: flex;
+        position: absolute;
+        top: -1000px;
+        right:0;
+        left: 0;
+        flex-direction: column;
+        background: var(--bg-color);
+        text-align: left;
+        padding: 0 5%;
+        transition: all .45s ease;
+    }
+    .navlist a{
+        display: block;
+        padding-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .navlist.open{
+       top: 100%;
+    }
+    .home{
+        grid-template-columns: 1fr;
+    }
+    .home-image{
+        margin-bottom: 5rem;
+    }
+    .liquid-shape{
+        width: 80%;
+        left: 10%;
+        top: 13%;
+
+    }
+    .skill-main{
+        grid-template-columns: 1fr;
+    }
+
+    footer p{
+        font-size: .8rem;
+    }
+}
+
+@media(max-width:420px){
+    html{
+        font-size: 80%;
+    }
+    footer p{
+        font-size: .6rem;
+
+    }
+
+}
