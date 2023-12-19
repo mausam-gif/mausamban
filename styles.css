@@ -755,7 +755,7 @@ footer a i{
     header,
     header.sticky{
         padding: 15px 5%;
-         background: rgba(0, 0, 0, 0.1);
+        
     }
     footer{
         padding: 15px 5%;
@@ -767,7 +767,7 @@ footer a i{
 
     .navlist a{
         padding:8px 15px;
-         background: rgba(0, 0, 0, 0.1);
+       color:blue;
     }
     :root{
         --big-font:2.2rem;
@@ -801,7 +801,7 @@ footer a i{
         right:0;
         left: 0;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.6);
         text-align: left;
         padding: 0 5%;
         transition: all .45s ease;
@@ -810,11 +810,11 @@ footer a i{
         display: block;
         padding-bottom: 1rem;
         font-size: 1rem;
-         background: rgba(0, 0, 0, 0.1);
+         color:blue;
     }
     .navlist.open{
        top: 100%;
-         background: rgba(0, 0, 0, 0.1);
+        
         
     }
     .home{
