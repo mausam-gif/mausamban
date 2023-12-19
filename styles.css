@@ -797,7 +797,7 @@ footer a i{
         right:0;
         left: 0;
         flex-direction: column;
-        background: var(--bg-color);
+        background: rgba(0, 0, 0, 0.1);
         text-align: left;
         padding: 0 5%;
         transition: all .45s ease;
