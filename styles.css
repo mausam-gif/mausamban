@@ -783,6 +783,7 @@ footer a i{
     }
      .loading-section{
        font-size:65%;
+     }
 
 }
 
@@ -838,6 +839,7 @@ footer a i{
     }
      .loading-section{
        font-size:65%;
+     }
 }
 
 @media(max-width:420px){
@@ -850,4 +852,5 @@ footer a i{
     }
    .loading-section{
        font-size:65%;
+   }
 }
